@@ -1,0 +1,155 @@
+<div class="cont">
+    <div class="search_box border_radius_12">
+        <i class="bi bi-search position_absolute"></i>
+        <input type="email" id="materialLoginFormEmail" class="w_100 pl_3 form-control" mdbInput>
+    </div>
+
+    <div class="border_radius_12 bg_grey mt_2">
+        <table mdbTable #tableEl="mdbTable" class="w_100">
+          <thead>
+            <tr>
+                <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let el of elements; let i = index">
+                <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"scope="row">
+                    <!-- <mdb-checkbox [default]="true"> -->
+                </th>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"><div class="fw_500">Joshua</div>jackshowman@gmail.com</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">Dennis</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">04/02/2020 09:35</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" class="text_center">
+                    <div *ngIf="i%2 === 0 && i !== 0" class="chip_ success_chip font_size_10 text_center pointer" (click)="clickStatus('open')">Open</div>
+                    <div *ngIf="i%2 !== 0 && i !== 0" class="chip_ danger_chip font_size_10 text_center pointer" (click)="clickStatus('resolved')">Resolved</div>
+                    <div *ngIf="i === 0" class="chip_ warning_chip font_size_10 text_center pointer" (click)="clickStatus('in_view')">In View</div>
+                </td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                    <span class="text_orange pointer" (click)="basicModal.show()">
+                        <i class="bi bi-eye mr_1 text_orange"></i> View
+                    </span>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt_4">
+        <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+      </div>
+</div>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-full-height modal-right" role="document">
+  <div class="modal-content">
+    <div class="modal-header" style="height: 120px;">
+        <div class="pull-left">
+            <div class="font_size_24 text_faint_light fw_normal">Queue #1</div>
+            <div class="text_warning fw_500 text_left font_size_24">RE: Chat with Richard</div>
+            <div class="font_size_18 fw_normal text_left text_faint_light">jackshowman@gmail.com</div>
+        </div>
+        <i class="bi bi-x text_orange pointer close pull-right" (click)="basicModal.hide()"></i>
+    </div>
+    <div class="modal-body text_center">
+        <div class="display_flex mt_3">
+            <div style="max-width: 120px;" class="mr_2 position_relative">
+                <div class="text_faint text_left font_size_16 fw_normal mb_05 pointer">Status</div>
+                <div class="w_100">
+                    <i class="bi bi-caret-down text_faint position_absolute" style="top: 38px; right: 5px;"></i>
+                    <select class="browser-default custom-select bg_grey border_none border_radius_12 text_light ml_auto mr_0 w_100" style="width: 150px;">
+                        <option selected>Status</option>
+                        <option value="1" selected>Open</option>
+                        <option value="2">Closed</option>
+                    </select>
+                </div>
+            </div>
+            <div style="max-width: 120px;" class="mr_2 position_relative">
+                <div class="text_faint text_left font_size_16 fw_normal mb_05">Assignee</div>
+                <div class="w_100 pointer">
+                    <i class="bi bi-caret-down text_faint position_absolute" style="top: 38px; right: 5px;"></i>
+                    <select class="browser-default custom-select bg_grey border_none border_radius_12 text_light ml_auto mr_0 w_100" style="width: 150px;">
+                        <option selected>Johosua</option>
+                        <option value="1" selected>Johosua</option>
+                        <option value="2">Closed</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt_3">
+            <div class="text_faint text_left font_size_16 fw_normal mb_05 pointer">File Uploaded</div>
+            <div class="w_100 border_radius_12 bg_grey text_faint justify_content_between_center" style="border: 1px dashed rgba(237, 237, 237, 0.2); padding: 8px 16px !important">
+                <div class="font_size_16 mt_05">
+                    <i class="bi bi-paperclip mr_1"></i>
+                    Filename.pdf
+                </div>
+                <div class="orange_circle">
+                    <i class="bi bi-box-arrow-down font_size_18" style="margin-top: 5px;"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt_3">
+            <div class="text_faint text_left font_size_16 fw_normal mb_05 pointer">Ongoing Chat</div>
+            <div class="w_100 border_radius_12 bg_grey text_faint" style="min-height: 260px; padding: 16px;">
+                <div class="mt_05 w_60 ml_0 mr_auto text_left">
+                    <div class="w_100 bggrey text_left font_size_16">
+                        I cannot book from Enugu
+                    </div>
+                    <div class="w_100 text_right text_warning font_size_12">
+                        8:15 <i class="bi bi-check2-all text_warning"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w_100 height border_radius_12 h_54 position_relative mt_2">
+                <input type="email" id="materialLoginFormEmail" style="padding-right: 35%;" placeholder="Type your message" class="w_100 form-control" mdbInput>
+                <div class="position_absolute font_size_24" style="right: 10px; top: 9px; width: fit-content;">
+                    <i class="bi bi-paperclip ml_05 mr_05 font_size_24"></i>
+                    <i class="bi bi-camera ml_1 mr_1 font_size_24"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="color: #F79E78 !important; height: 24px !important" class="ml_05 mr_05" viewBox="0 0 512 512"><path d="M470.3 271.15L43.16 447.31a7.83 7.83 0 01-11.16-7V327a8 8 0 016.51-7.86l247.62-47c17.36-3.29 17.36-28.15 0-31.44l-247.63-47a8 8 0 01-6.5-7.85V72.59c0-5.74 5.88-10.26 11.16-8L470.3 241.76a16 16 0 010 29.39z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <div class="text_center">
+            <button type="button" outline="true" routerLink="../dashboard" class="w_100 border_radius_12 btn button orange_btn_outline mb_1">End Support</button>
+        </div>
+        <div class="text_center">
+            <button type="button" block="true" routerLink="../dashboard" class="w_100 border_radius_12 btn button orange_btn mb_1" (click)="publish()">Leave Chat</button>
+        </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+
+
+<div mdbModal #statusModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-full-height modal-right" role="document">
+  <div class="modal-content">
+    <div class="modal-header" style="height: 120px;">
+        <div class="pull-left">
+            <div class="font_size_24 text_faint_light fw_normal">Queue #1</div>
+            <div class="text_warning fw_500 text_left font_size_24">RE: Chat with Richard</div>
+            <div class="font_size_18 fw_normal text_left text_faint_light">jackshowman@gmail.com</div>
+        </div>
+        <i class="bi bi-x text_orange pointer close pull-right" (click)="statusModal.hide()"></i>
+    </div>
+    <div class="modal-body text_center">
+        
+        <div class="mt_3 text_center">
+            <img [src]="selected_status?.image" class="w_60">
+            <div class="font_size_24 text_light fw_normal text_center mt_1 mb_05">Status: {{selected_status?.status}}</div>
+            <div class="w_60 margin_auto text_center text_faint fw_normal">{{selected_status?.details}}</div>
+        </div>
+
+    </div>
+  </div>
+</div>
+</div>

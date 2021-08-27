@@ -1,0 +1,26 @@
+
+.card_8{
+    width: 30%;
+    min-width: 314px !important;
+}
+
+@media only screen and (min-width: 1000px) {
+    ._jcb{
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .card_8{
+        display: inline-block !important;
+        margin: auto !important;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+.bar{
+    *, div, span, canvas{
+        color: white !important;
+    }
+}

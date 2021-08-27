@@ -1,0 +1,33 @@
+<div class="cont">
+    <div class="mt_3 mb_1 font_size_24 text_left text_light" style="font-weight: 700;">General Settings</div>
+    <div class="_jcb mt_1">
+        <div class="card_8 display_inline_block bg_grey border_radius_12 pt_5 pl_1 pr_1 pb_2 ml_1 mr_1 text_center" routerLink="../../settings/about">
+            <i class="bi bi-file-earmark-text margin_auto"></i>
+            <div class="text_light text_center font_size_24 mb_3 mt_05">About Hey Nigeria</div>
+        </div>
+        <div class="card_8 display_inline_block bg_grey border_radius_12 pt_5 pl_1 pr_1 pb_2 text_center ml_1 mr_1" (click)="revokeModal.show()">
+            <i class="bi bi-slash-circle margin_auto"></i>
+            <div class="text_light text_center font_size_24 mb_3 mt_05">Revoke Access</div>
+        </div>
+    </div>
+</div> 
+
+<div mdbModal #revokeModal="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="border-radius: 12px !important;">
+    <div class="modal-content bg_grey" style="border-radius: 12px !important;">
+      <div class="modal-body bg_grey mx-3" style="padding: 2rem;">
+        <div class="text_center text_warning fw_500 font_size_34">Revoke Access</div>
+        <div class="danger_alert mt_1 mb_1 pt_1 pb_1">
+            <div class="text_center font_size_16">
+                Note: if you hand over your super-admin access you would lose the rights you currently have     
+            </div>
+        </div>
+        <input disabled type="text" id="formPassword" placeholder="Enter new admin Email" class="form-control w_100 mb_1 mb_1" />
+
+        <button type="button" block="true" routerLink="../dashboard" class=" w_100 btn button orange_btn border_radius_12">Revoke Access</button>
+
+      </div>
+    </div>
+  </div>
+</div>

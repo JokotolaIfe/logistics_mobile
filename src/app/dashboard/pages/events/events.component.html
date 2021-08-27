@@ -1,0 +1,64 @@
+<div class="cont">
+    <div *ngIf="!published">
+        <button type="button" block="true" style="width: max-content;" (click)="eventModal.show()" class="btn button orange_btn border_radius_12">Add New Event</button>
+        <div class="text_center pt_5">
+            <img src="../../../../assets/images/empty.png" style="max-height: 250px">
+            <div class="text_faint_light fw_500 font_size_24 text_center mt_2 mb_1">Create Event Gallery</div>
+            <div class="text_faint_light fw_normal font_size_16 text_center mb_1">Create a food event post to keep all your users entertained</div>
+        </div>
+    </div>
+    <div *ngIf="published">
+        <div class="row mt_1 mb_1 bg_grey border_radius_12" *ngFor="let el of elements" style="padding: 1rem;">
+            <div class="col-lg-2 col-sm-6 col-md-4 text_left">
+                <img class="border_radius_25" src="../../../../assets/images/girl.jpeg" style="width: 100% !important; height: 165px;">
+            </div>
+            <div class="col-lg-10 col-sm-6 col-md-8 text_left">
+                <i class="bi bi-three-dots-vertical position_absolute pointer" placement="bottom" triggers="click"
+                    id="popTemplate" style="right: 20px; top: 20px;" [mdbPopover]="popTemplate" mdbWavesEffect></i>
+                <ng-template #popTemplate>
+                    <div class="list-group">
+                        <a class="text_faint_light font_size_14 list-group-item list-group-item-action waves-light" mdbWavesEffect>Edit</a>
+                        <a class="text_faint_light font_size_14 list-group-item list-group-item-action waves-light" mdbWavesEffect>Delete</a>
+                    </div>
+                </ng-template>
+                <div class="text_light font_size_24">Event Name</div>
+                <div class="text_light font_size_16 mt_1 fw_normal">Event Details</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div mdbModal #eventModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+aria-hidden="true">
+    <div class="modal-dialog modal-full-height modal-right" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 50px;">
+                <span class="font_size_24 text_left text_warning fw_500">Add Event</span>
+                <i class="bi bi-x text_orange pointer close pull-left" (click)="eventModal.hide()"></i>
+            </div>
+            <div class="modal-body text_center">
+                <input placeholder="Event name" type="text" id="formEmail" class="form-control mt_2 mb_2" />
+                <textarea placeholder="Event Details" rows="5" type="text" id="formEmail" class="form-control mt_2 mb_2 border_radius_12"></textarea>
+                <input placeholder="Date of Event" type="date" id="formEmail" class="form-control mt_2 mb_2" />
+                <input placeholder="Type of Event" type="text" id="formEmail" class="form-control mt_2 mb_2" />
+                <input placeholder="Admin Email" type="text" id="formEmail" class="form-control mt_2 mb_2" />
+                <div class="upload_cont">
+                    <div class="text_center text_faint_light font_size_24 mt_2 mb_2">
+                        <i class="bi bi-upload"></i>
+                    </div>
+                    <div class="text_faint_light font_size_14 fw_normal w_70 margin_auto mb_1">
+                        Click to upload food/event image (png, jpg) size of <span class="text_warning">1000PX</span> by <span class="text_warning">1000PX</span> less than 1MB
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="text_center">
+                        <button type="button" block="true" routerLink="../dashboard" class="w_100 border_radius_12 btn button orange_btn mb_1" (click)="publish()">Publish Event</button>
+                    </div>
+                    <div class="text_center">
+                        <button type="button" outline="true" routerLink="../dashboard" class="w_100 border_radius_12 btn button orange_btn_outline mb_1">Save As Draft</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

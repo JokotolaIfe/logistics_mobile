@@ -1,0 +1,76 @@
+<div class="cont">
+    <div class="search_box border_radius_12">
+        <i class="bi bi-search position_absolute"></i>
+        <input type="email" id="materialLoginFormEmail" class="w_100 pl_3 form-control" mdbInput>
+    </div>
+
+    <div class="text_right w_100">
+        <select class="browser-default custom-select bg_grey border_none border_radius_12 mt_3 text_light ml_auto mr_0" style="width: 150px;">
+            <option selected>Select</option>
+            <option value="1" selected>All Users</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+
+    <div class="border_radius_12 bg_grey mt_2">
+        <table mdbTable #tableEl="mdbTable" class="w_100">
+          <thead>
+            <tr>
+                <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let el of elements; let i = index">
+                <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"scope="row">
+                    <!-- <mdb-checkbox [default]="true"> -->
+                </th>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">jackshowman@gmail.com</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">Johosua</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">04/02/2020</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">02/02/2021</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                    <span class="text_orange pointer" (click)="basicModal.show()">
+                        <i class="bi bi-eye mr_1 text_orange"></i> View
+                    </span>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt_4">
+        <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+      </div>
+</div>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-full-height modal-right" role="document">
+  <div class="modal-content">
+    <div class="modal-header" style="height: 50px;">
+        <i class="bi bi-x text_orange pointer close pull-left" (click)="basicModal.hide()"></i>
+    </div>
+    <div class="modal-body text_center">
+        <div class="circle_dp mt_3">B</div>
+        <div class="text_faint_light text_center font_size_16 mt_1">Jhoseur</div>
+        <div class="text_faint_light text_center font_size_14">jackshowman@gmail.com</div>
+    </div>
+    <!-- <div class="modal-footer" 
+    style="text-align: left !important; 
+    display: block !important; 
+    background-color: #FFFFFF !important;
+    border-top: solid 1px #463e79 !important;">
+      <button class="btn delete_btn" style="padding: 4px 8px !important;font-size: 12px !important;" (click)="deleteDept([dept?.id])">
+        <img *ngIf="loading_"  style="height: 14px !important;" src="../../../../../assets/img/loader.gif">
+        <span *ngIf="!loading_">Delete Department</span>
+      </button>
+
+      <button class="btn edit_btn" (click)="showEditModal(dept)" style="padding: 4px 8px !important;font-size: 12px !important;">
+        <img *ngIf="loading" style="height: 14px !important; margin: auto !important; margin-bottom: 10px !important;" src="../../../../../assets/img/loader.gif">
+        <span *ngIf="!loading">Edit Department</span>
+      </button>
+    </div> -->
+  </div>
+</div>
+</div>

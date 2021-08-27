@@ -1,0 +1,66 @@
+<div class="cont">
+
+    <div class="text_left font_size_24 text_light">
+        <i class="bi bi-arrow-left-short mr_2 pointer" (click)="back()"></i>
+        <i class="bi bi-speedometer2 mr_1"></i>
+        User Management
+    </div>
+
+
+    <div class="text_right w_100 mt_2">
+        <div class="justify_content_between_center mr_0 ml_auto">
+            <div style="max-width: 100%; min-width: 330px;">
+                <input type="email" id="materialLoginFormEmail" placeholder="Enter Admin Email" class="w_100 form-control mt_05" mdbInput>
+            </div>
+            <div class="btn_cont">
+                <button type="button"class="w_auto border_radius_12 btn button orange_btn">Send Invite</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="border_radius_12 bg_grey mt_2">
+        <table mdbTable #tableEl="mdbTable" class="w_100">
+          <thead>
+            <tr>
+                <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let el of elements; let i = index">
+                <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"scope="row">
+                    <!-- <mdb-checkbox [default]="true"> -->
+                </th>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">jackshowman@gmail.com</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">Johosua</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">04/02/2020</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">02/02/2021</td>
+                <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                    <span class="text_orange pointer" (click)="basicModal.show()">
+                        <i class="bi bi-eye mr_1 text_orange"></i> View
+                    </span>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt_4">
+        <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+      </div>
+</div>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-full-height modal-right" role="document">
+  <div class="modal-content">
+    <div class="modal-header" style="height: 50px;">
+        <i class="bi bi-x text_orange pointer close pull-left" (click)="basicModal.hide()"></i>
+    </div>
+    <div class="modal-body text_center">
+        <div class="circle_dp mt_3">B</div>
+        <div class="text_faint_light text_center font_size_16 mt_1">Jhoseur</div>
+        <div class="text_faint_light text_center font_size_14">jackshowman@gmail.com</div>
+    </div>
+  </div>
+</div>
+</div>

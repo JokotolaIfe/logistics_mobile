@@ -1,0 +1,33 @@
+<div class="cont">
+    <div class="_jcb">
+        <div class="card_8 display_inline_block bg_grey border_radius_12 pt_2 pl_1 pr_1 pb_2 margin_auto">
+            <div class="text_light text_left font_size_24 mb_1">Number of installs</div>
+            <div style="font-size: 60px;" class="text_left text_faint_light mt_05">10</div>
+        </div>
+        <div class="card_8 display_inline_block bg_grey border_radius_12 pt_2 pl_1 pr_1 pb_2 margin_auto">
+            <div class="text_light text_left font_size_24 mb_1">Number of Active Users</div>
+            <div style="font-size: 60px;" class="text_left text_faint_light mt_05">10</div>
+        </div>
+        <div class="card_8 display_inline_block bg_grey border_radius_12 pt_2 pl_1 pr_1 pb_2 margin_auto">
+            <div class="text_light text_left font_size_24 mb_1">Number of Downloads</div>
+            <div style="font-size: 60px;" class="text_left text_faint_light mt_05">10</div>
+        </div>
+    </div>
+    <div class="w_100 mt_2">
+        <div class="bg_grey border_radius_12 text_left" style="padding: 20px 24px !important;">
+            <div class="text_light text_left font_size_24 mb_2">Number of installs</div>
+            <div style="display: block" class="bar">
+                <canvas mdbChart
+                    [chartType]="chartType"
+                    [datasets]="chartDatasets"
+                    [labels]="chartLabels"
+                    [colors]="chartColors"
+                    [options]="chartOptions"
+                    [legend]="true"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>

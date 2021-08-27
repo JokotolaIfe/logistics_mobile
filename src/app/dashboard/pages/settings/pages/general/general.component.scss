@@ -1,0 +1,63 @@
+
+.card_8{
+    width: 30%;
+    min-width: 314px !important;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1000px) {
+    ._jcb{
+        display: flex !important;
+        // justify-content: space-between !important;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .card_8{
+        display: inline-block !important;
+        margin: auto !important;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+        cursor: pointer;
+    }
+}
+
+.bar{
+    *, div, span, canvas{
+        color: white !important;
+    }
+}
+
+.bi{
+    height: 64px;
+    font-size: 64px;
+}
+
+.card_8:hover{
+    box-shadow: 0px 24px 38px rgba(0, 0, 0, 0.14), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-dialog{
+    background: linear-gradient(151.41deg, #1E2D34 41.76%, #172227 148.38%);
+
+    .danger_alert{
+        background: rgba(255, 70, 79, 0.2);
+        border-radius: 12px;
+        div{
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            font-family: Switzer;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 150%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #FF464F;
+        }
+    }
+}
+.modal-dialog .modal-content{
+    border-radius: 12px !important;
+}

@@ -1,0 +1,27 @@
+<a (click)="sidenav.toggle()" mdbBtn class="p-3 button-collapse"><i style="color: white !important;" class="bi bi-list"></i></a>
+
+<mdb-side-nav #sidenav [sidenavBreakpoint]="600" class="fixed" [fixed]="true">
+  <li>
+    <div class="pt_2 pr_2 waves-light text_left justify_content_between_center">
+      <a class="text_warning font_size_24 text_left">Hey Nigeria</a>
+      <i (click)="sidenav.toggle()" class="mt_1 bi bi-list text_right float_right text_orange"></i>
+    </div>
+  </li>
+  <div class="list-group mt_3">
+    <a class="list-group-item list-group-item-action waves-light mt_05 mb_05" mdbWavesEffect routerLink="home" routerLinkActive="active_route"><i class="bi bi-house-door mr_1"></i>Home</a>
+    <a class="list-group-item list-group-item-action waves-light mt_05 mb_05" mdbWavesEffect routerLink="users" routerLinkActive="active_route"><i class="bi bi-person mr_1"></i>Users</a>
+    <a class="list-group-item list-group-item-action waves-light mt_05 mb_05" mdbWavesEffect routerLink="events" routerLinkActive="active_route"><i class="bi bi-calendar-event mr_1"></i>Events</a>
+    <a class="list-group-item list-group-item-action waves-light mt_05 mb_05" mdbWavesEffect routerLink="support" routerLinkActive="active_route"><i class="bi bi-headset mr_1"></i>Support</a>
+    <a class="list-group-item list-group-item-action waves-light mt_05 mb_05" mdbWavesEffect routerLink="settings" routerLinkActive="active_route"><i class="bi bi-gear mr_1"></i>Settings</a>
+  </div>
+</mdb-side-nav>
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar_dark" [containerInside]="false">
+  <links class="text-right" style="line-height: 5rem !important;">
+    <i class="bi bi-bell" style="color: white !important;"></i>
+    <div class="circle" style="line-height: 70px !important;">&nbsp;</div>
+  </links>
+</mdb-navbar>
+  <div class="outlet">
+      <router-outlet></router-outlet>
+  </div>

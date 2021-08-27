@@ -1,0 +1,22 @@
+.upload_cont{
+    background: linear-gradient(138.13deg, #22343C 25.87%, #1F2E35 100%);
+    border: 1px dashed rgba(237, 237, 237, 0.2);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.list-group{
+    border: none !important;
+    background: #364D58 !important;
+    // box-shadow: 0px 24px 38px rgba(0, 0, 0, 0.14), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px !important;
+    .list-group-item {
+        background: none !important;
+        padding: 20px !important;
+        border: none !important;
+        width: 100% !important;
+    }
+    .list-group-item:hover {
+        background: #1F2E35 !important;
+    }
+}

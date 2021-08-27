@@ -1,0 +1,27 @@
+.search_box{
+    background: linear-gradient(138.13deg, #22343C 25.87%, #1F2E35 100%);
+    width: 476px;
+    max-width: 100%;
+    height: 56px !important;
+    border: none;
+    position: relative;
+    .bi-search{
+        top: 15px;
+        left: 15px;
+        color: white !important;
+    }
+    input{
+        border: none !important;
+    }
+}
+.circle_dp{
+    font-size: 34px !important;
+    line-height: 50px;
+    height: 55px;
+    width: 55px;
+    margin: auto;
+    color: #FFC542;
+    text-align: center;
+    border: solid 2px #FFC542;
+    border-radius: 50% !important;
+}
